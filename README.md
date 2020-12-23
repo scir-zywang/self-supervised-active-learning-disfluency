@@ -13,7 +13,7 @@ Thank you for your patience, and the model is coming soon.
 ## How to use
 
 ```
-conda create -n sa_disfluency
+conda create -n sa_disfluency python=3.6
 conda activate sa_disfluency
 conda install pytorch torchvision torchaudio cudatoolkit=10.1 -c pytorch
 python transformers/setup.py install
