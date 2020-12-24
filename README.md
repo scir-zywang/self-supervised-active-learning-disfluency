@@ -10,7 +10,7 @@ Now all the code and model are released. Thank you for your patience!
 
 ## About Dataset
 
-Since the *switchboard* dataset was bought from LDC(linguistic Data Consortium), so we have no right to release the data in this repo.
+Since the *switchboard* dataset was bought from LDC(linguistic Data Consortium), we have no right to release the data in this repo.
 
 But we give the sample of the data.
 
