@@ -2,10 +2,10 @@ import sys
 import os
 
 
-# sys.argv[1]: 当前训练使用语料句数
-# sys.argv[2]: x: 挑选出x句假如训练集
-# sys.argv[3]: 当前的训练是第x个run
-# sys.argv[4]: 当前的选择策略
+# sys.argv[1]: num of sentences in training dataset
+# sys.argv[2]: num of sentences added to training dataset
+# sys.argv[3]: epoch of run
+# sys.argv[4]: the selecting strategy
 
 def main():
     total_select = list()
@@ -19,22 +19,16 @@ def main():
             items = line.strip().split("\t")
             total_unselect.append("\t".join(items[:5]))
 
-    with open("/users5/zywang/disfluency/ac_learning_data/" + sys.argv[3] + "/" + str(int(sys.argv[1])) + "/train.tsv",
-              'r', encoding='utf8') as f:
+    with open("data/" + sys.argv[3] + "/" + str(int(sys.argv[1])) + "/train.tsv",'r', encoding='utf8') as f:
         for line in f:
             total_select.append(line.strip())
 
-    os.makedirs(
-        "/users5/zywang/disfluency/ac_learning_data/" + sys.argv[3] + "/" + str(int(sys.argv[1]) + int(sys.argv[2])),
-        exist_ok=True)
-    # print("/users5/zywang/disfluency/ac_learning_data/" + sys.argv[3] + "/" + str(int(sys.argv[1]) + int(sys.argv[2])))
-    with open("/users5/zywang/disfluency/ac_learning_data/" + sys.argv[3] + "/" + str(
-            int(sys.argv[1]) + int(sys.argv[2])) + "/train.tsv", "w", encoding='utf8') as fw:
+    os.makedirs("data/" + sys.argv[3] + "/" + str(int(sys.argv[1]) + int(sys.argv[2])),exist_ok=True)
+    with open("data/" + sys.argv[3] + "/" + str(int(sys.argv[1]) + int(sys.argv[2])) + "/train.tsv", "w", encoding='utf8') as fw:
         for line in total_select:
             fw.write(line+"\n")
 
-    with open("/users5/zywang/disfluency/ac_learning_data/" + sys.argv[3] + "/" + str(
-            int(sys.argv[1]) + int(sys.argv[2])) + "/unused.tsv", "w", encoding='utf8') as fw:
+    with open("data/" + sys.argv[3] + "/" + str(int(sys.argv[1]) + int(sys.argv[2])) + "/unused.tsv", "w", encoding='utf8') as fw:
         for line in total_unselect:
             fw.write(line+"\n")
 
