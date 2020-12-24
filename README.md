@@ -23,7 +23,9 @@ What we did in the paper was to simulate the activate learning process. So all t
 ## About Model
 We also release our self-supervised model trained by pseudo data. Please download it in the following link, and put the "pytorch_model.bin" in the "self_supervised_model" folder.
 
-[download]: https://drive.google.com/file/d/1WXuTC5ygmiilfVOoW9Iwi94bbvk6dS3t/view?usp=sharing
+[download_model][model_link]
+
+[model_link]: https://drive.google.com/file/d/1WXuTC5ygmiilfVOoW9Iwi94bbvk6dS3t/view?usp=sharing
 
 ## How to Use
 
